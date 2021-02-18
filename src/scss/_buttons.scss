@@ -1,0 +1,30 @@
+%btn {
+    display: block;
+    font-weight: 500;
+    font-size: $mobile-font;
+    width: max-content;
+    padding: .8rem .9rem;
+    text-align: center;
+    border-radius: 6px;
+    color: set-text-color($black);
+    text-transform: capitalize;
+    cursor: pointer;
+
+    @include laptop {
+        padding: .8rem 1.3rem;
+    }
+}
+
+.btn-primary {
+    @extend %btn;
+
+    background-color: $blue;
+    box-shadow: 1px 5px 5px rgba($gray, .2);
+}
+
+.btn-secondary {
+    @extend %btn;
+
+    background-color: $red;
+    box-shadow: 1px 5px 5px rgba($gray, .2);
+}

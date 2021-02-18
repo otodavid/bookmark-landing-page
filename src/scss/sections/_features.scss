@@ -1,0 +1,163 @@
+.features {
+    padding: 2.5rem 0;
+
+    @include laptop {
+        padding: 3.5rem 0;
+    }
+}
+
+.intro {
+    padding: 2.5rem 2rem;
+    text-align: center;
+
+    @include laptop {
+        padding: 3.5rem 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.tabs {
+    &-heading {
+        padding: 0 8.5%;
+        margin-top: -.8rem;
+
+        @include laptop {
+            @include flex(space-between, center);
+            width: 62%;
+            margin: -2.5rem auto 0;
+        }
+    }
+
+    h4 {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: .5px;
+        color: $gray;
+        padding: 1rem;
+        border-bottom: 1px solid rgba($gray, .25);
+        position: relative;
+        cursor: pointer;
+
+        @include laptop {
+            padding: 2rem 1rem;
+        }
+
+        &.active {
+            color: set-text-color(white);
+            border-bottom: 1px solid rgba($gray, .15);
+        }
+
+        &.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 45%;
+            margin-left: calc(45%/-2);
+            border-bottom: 5px solid $red;
+
+            @include laptop {
+                width: 130%;
+                margin-left: calc(130%/-2);
+            }
+        }
+
+        &:first-child {
+            border-top: 1px solid rgba($gray, .25);
+        }
+    }
+
+    &-content {
+        padding: 2.5rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        margin-top: 1.8rem;
+
+        @include laptop {
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+    
+    .tab {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        opacity: 0;
+        @include transition-ease;
+
+        @include laptop {
+            @include flex(space-between, center);
+        }
+        
+        &.active {
+            opacity: 1;
+        }
+
+        &-image {
+            position: relative;
+            padding-bottom: 3.5rem;
+
+            @include laptop {
+                flex: 0 1 58%;
+                padding: 3rem 6rem;
+            }
+
+            .blue-bg {
+                position: absolute;
+                left: 0;
+                top: 2rem;
+                border-radius: 0 35% 35% 0;
+
+                @include laptop {
+                    top: 8rem;
+                    height: 370px;
+                    width: 70%;
+                }
+            }
+
+            img {
+                width: 83%;
+                margin: 0 auto;
+            }
+        }
+
+        &-content {
+            padding: 1.5rem 2rem;
+            text-align: center;
+
+            @include laptop {
+                flex: 0 1 42%;
+                text-align: left;
+                padding: 0;
+                padding-right: 10rem;
+            }
+
+            p {
+                padding: 4% 0;
+
+                @include laptop {
+                    padding: 5% 0;
+                }
+            }
+
+            .btn-primary {
+                display: none;
+
+                @include laptop {
+                    display: block;
+                }
+            }
+
+            
+        }
+
+        &:not(:first-of-type) {
+            img {
+               width: 70%;
+            }
+        }
+    }
+}

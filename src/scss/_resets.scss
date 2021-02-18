@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', Roboto, Arial, sans-serif;
+    font-size: $mobile-font;
+    line-height: 1.6;
+
+    @include laptop {
+        font-size: $desktop-font;
+    }
+}
+
+h1,h2,h3 {
+    font-weight: 500;
+    color: set-text-color(white);
+    line-height: 1.3;
+
+    @include laptop {
+        line-height: 1.1;
+    }
+}
+
+h2 {
+    font-size: 1.9rem;
+
+    @include laptop {
+        font-size: 3rem;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    @include laptop {
+        font-size: 2rem;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: $mobile-font;
+    color: set-text-color(white);
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: $mobile-font;
+    display: block;
+    cursor: pointer;
+}

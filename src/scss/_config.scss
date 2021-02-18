@@ -1,0 +1,49 @@
+$blue: #5368df;
+$red: #fa5757;
+$gray: #9194a1;
+$black: #252b46;
+$light: whitesmoke; 
+$mobile-font: .94rem;
+$desktop-font: 1.125rem;
+
+// set text color based on bg
+@function set-text-color($color) {
+    @if (lightness($color) > 70) {
+        @return $black;
+    } @else  {
+        @return $light;
+    }
+}
+
+// flexbox mixin
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// generic transition
+@mixin transition-ease {
+    transition: all .4s ease-in-out;
+}
+
+// media-queries
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}

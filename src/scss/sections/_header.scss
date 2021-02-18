@@ -1,0 +1,119 @@
+header {
+    padding: 2.5rem 2rem;
+    @include flex(space-between, center);
+
+    @include laptop {
+        padding: 3rem 2rem 3rem 5.5rem;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: $black;
+    transform: translateX(100vw);
+    @include transition-ease;
+
+    @include laptop {
+        position: static;
+        width: 50%;
+        transform: translateX(0);
+        height: auto;
+        background-color: transparent;
+        @include flex(space-between, center);
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    .mobile {
+        @include flex(space-between, center);
+        padding: 10%;
+
+        @include laptop {
+            display: none;
+        }
+
+        .close-menu {
+            font-size: $desktop-font;
+            color: set-text-color($black);
+        }
+    }
+
+    .menu {
+        padding: 0 10%;
+
+        @include laptop {
+            padding: 0;
+            width: 58%;
+            @include flex(space-between, center);
+        }
+
+        &-item {
+            padding: 7% 5%;
+            text-align: center;
+            border-top: 1px solid rgba($gray, 0.25);
+
+            @include laptop {
+                padding: 0;
+                border: 0;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid rgba($gray, .25);
+
+                @include laptop {
+                    border: 0;
+                }
+            }
+        }
+
+       &-link {
+        color: set-text-color($black);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 1.3rem;
+
+        @include laptop {
+            font-size: .8rem;
+            color: set-text-color($light);
+        }
+       } 
+    }
+
+    .nav-btn {
+        @extend %btn ;
+
+        width: 80%;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-size: 20px;
+        border: 2px solid whitesmoke;
+        padding: .7rem;
+        margin-top: 2rem;
+        letter-spacing: 3px;
+
+        @include laptop {
+            width: 120px;
+            margin-top: 0;
+            border: 0;
+            color: set-text-color($red);
+            font-size: .8rem;
+            background-color: $red;
+        }
+    }
+}
+
+.hamburger {
+    font-size: $desktop-font;
+
+    @include laptop {
+        display: none;
+    }
+}
+

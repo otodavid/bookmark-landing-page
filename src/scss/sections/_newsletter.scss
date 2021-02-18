@@ -1,0 +1,70 @@
+.newsletter {
+    background-color: $blue;
+    padding: 1rem 0;
+    color: set-text-color($blue);
+
+    .content {
+        padding: 2.5rem 2rem;
+        text-align: center;
+
+        @include laptop {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+    }
+
+    span {
+        letter-spacing: 4px;
+        font-size: .8rem;
+        text-transform: uppercase;
+
+        @include laptop {
+            font-size: $mobile-font;
+        }
+    }
+
+    h3 {
+        color: set-text-color($blue);
+        margin: .5rem 0;
+
+        @include laptop {
+            margin: 2rem 0
+        }
+    }
+
+    form {
+        @include flex(null, null, column);
+        margin-top: 2rem;
+
+        @include laptop {
+            @include flex(space-between, center row);
+        }
+
+        input {
+            padding: .9rem 1.2rem;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: $mobile-font;
+            margin-bottom: 1rem;
+
+            @include laptop {
+                flex: 0 1 68%;
+                margin-bottom: 0;
+            }
+
+            &::placeholder {
+                color: rgba($gray, .8);
+            }
+        }
+
+        .btn-secondary {
+            width: 100%;
+            padding: .9rem 1.2rem;
+
+            @include laptop {
+                flex: 0 1 28%;
+            }
+        }
+    }
+}
