@@ -5,13 +5,23 @@
     width: max-content;
     padding: .8rem .9rem;
     text-align: center;
+    border: 2px solid transparent;
     border-radius: 6px;
     color: set-text-color($black);
     text-transform: capitalize;
     cursor: pointer;
 
-    @include laptop {
+    @include media-xs {
+        padding: .7rem .6rem;
+        font-size: .8rem;
+    }
+
+    @include media-lg {
         padding: .8rem 1.3rem;
+    }
+
+    &:hover {
+        background-color: #fff;
     }
 }
 
@@ -20,6 +30,11 @@
 
     background-color: $blue;
     box-shadow: 1px 5px 5px rgba($gray, .2);
+
+    &:hover {
+        border: 2px solid $blue;
+        color: $blue;
+    }
 }
 
 .btn-secondary {
@@ -27,4 +42,9 @@
 
     background-color: $red;
     box-shadow: 1px 5px 5px rgba($gray, .2);
+
+    &:hover {
+        border: 2px solid $red;
+        color: $red;
+    }
 }

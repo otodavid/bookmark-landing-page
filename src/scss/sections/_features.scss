@@ -1,7 +1,7 @@
 .features {
     padding: 2.5rem 0;
 
-    @include laptop {
+    @include media-lg {
         padding: 3.5rem 0;
     }
 }
@@ -10,7 +10,12 @@
     padding: 2.5rem 2rem;
     text-align: center;
 
-    @include laptop {
+    @include media-sm {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    @include media-md {
         padding: 3.5rem 2rem;
         max-width: 600px;
         margin: 0 auto;
@@ -22,10 +27,16 @@
         padding: 0 8.5%;
         margin-top: -.8rem;
 
-        @include laptop {
-            @include flex(space-between, center);
-            width: 62%;
+        @include media-sm {
+            width: 80%;
+            margin: 0 auto; 
+        }
+
+        @include media-md {
+            @include flex(center);
+            width: 100%;
             margin: -2.5rem auto 0;
+            padding: 0;
         }
     }
 
@@ -40,8 +51,22 @@
         position: relative;
         cursor: pointer;
 
-        @include laptop {
-            padding: 2rem 1rem;
+        &:first-child {
+            border-top: 1px solid rgba($gray, .25);
+        }
+
+        @include media-md {
+            padding: 2rem 2.5rem;
+            border: 0;
+            border-bottom: 1px solid rgba($gray, .25);
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+
+        &:hover {
+            color: $red;
         }
 
         &.active {
@@ -58,14 +83,10 @@
             margin-left: calc(45%/-2);
             border-bottom: 5px solid $red;
 
-            @include laptop {
-                width: 130%;
-                margin-left: calc(130%/-2);
+            @include media-md {
+                width: 100%;
+                margin-left: calc(100%/-2);
             }
-        }
-
-        &:first-child {
-            border-top: 1px solid rgba($gray, .25);
         }
     }
 
@@ -76,7 +97,7 @@
         grid-template-rows: 1fr;
         margin-top: 1.8rem;
 
-        @include laptop {
+        @include media-md {
             margin-top: 0;
             padding: 0;
         }
@@ -86,22 +107,36 @@
         grid-column: 1/2;
         grid-row: 1/2;
         opacity: 0;
+        visibility: hidden;
         @include transition-ease;
 
-        @include laptop {
-            @include flex(space-between, center);
+        @include media-sm {
+            @include flex();
+        }
+
+        @include media-md {
+            @include flex();
         }
         
         &.active {
             opacity: 1;
+            visibility: visible;
         }
 
         &-image {
             position: relative;
             padding-bottom: 3.5rem;
 
-            @include laptop {
+            @include media-sm {
+                flex: 1 0 50%;
+            }
+
+            @include media-md {
                 flex: 0 1 58%;
+                padding: 3rem;
+            }
+
+            @include media-xl {
                 padding: 3rem 6rem;
             }
 
@@ -111,16 +146,29 @@
                 top: 2rem;
                 border-radius: 0 35% 35% 0;
 
-                @include laptop {
+                @include media-sm {
+                    width: 80%;
+                }
+
+                @include media-md {
                     top: 8rem;
-                    height: 370px;
+                    height: 60%;
                     width: 70%;
+                }
+
+                @include media-lg {
+                    height: 80%;
                 }
             }
 
             img {
                 width: 83%;
                 margin: 0 auto;
+
+                @include media-sm {
+                    width: 80%;
+                    margin-left: 5rem;
+                }
             }
         }
 
@@ -128,35 +176,56 @@
             padding: 1.5rem 2rem;
             text-align: center;
 
-            @include laptop {
+            @include media-sm {
+                flex: 1 0 50%;
+                text-align: left;
+                padding-right: 4rem;
+            }
+
+            @include media-md {
                 flex: 0 1 42%;
                 text-align: left;
                 padding: 0;
+                padding-top: 3rem;
+                padding-right: 3rem;
+            }
+
+            @include media-lg {
+                padding-right: 5rem;
+            }
+
+            @include media-xl {
+                padding-top: 0;
                 padding-right: 10rem;
             }
 
             p {
                 padding: 4% 0;
 
-                @include laptop {
-                    padding: 5% 0;
+                @include media-md {
+                    padding: .8rem 0 1.2rem;
                 }
             }
 
             .btn-primary {
                 display: none;
 
-                @include laptop {
+                @include media-md {
                     display: block;
                 }
             }
-
-            
         }
 
         &:not(:first-of-type) {
             img {
                width: 70%;
+            //    margin-left: 8rem;
+
+               @include media-lg {
+                   width: 70%;
+                //    margin-left: 0;
+
+               }
             }
         }
     }

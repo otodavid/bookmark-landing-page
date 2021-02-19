@@ -2,7 +2,7 @@ $blue: #5368df;
 $red: #fa5757;
 $gray: #9194a1;
 $black: #252b46;
-$light: whitesmoke; 
+$light: whitesmoke;
 $mobile-font: .94rem;
 $desktop-font: 1.125rem;
 
@@ -10,13 +10,14 @@ $desktop-font: 1.125rem;
 @function set-text-color($color) {
     @if (lightness($color) > 70) {
         @return $black;
-    } @else  {
+    }
+    @else {
         @return $light;
     }
 }
 
 // flexbox mixin
-@mixin flex($justify, $align, $direction: row) {
+@mixin flex($justify: space-between, $align: center, $direction: row) {
     display: flex;
     flex-direction: $direction;
     flex-wrap: wrap;
@@ -30,19 +31,36 @@ $desktop-font: 1.125rem;
 }
 
 // media-queries
-@mixin tablet {
+// small devices like galaxy fold
+@mixin media-xs {
+    @media screen and (max-width: 375px) {
+        @content;
+    }
+}
+
+// phablets
+@mixin media-sm {
+    @media screen and (min-width:600px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+// tablets
+@mixin media-md {
     @media screen and (min-width: 768px) {
         @content;
     }
 }
 
-@mixin laptop {
+// laptops 
+@mixin media-lg {
     @media screen and (min-width: 1024px) {
         @content;
     }
 }
 
-@mixin desktop {
+// desktops
+@mixin media-xl {
     @media screen and (min-width: 1440px) {
         @content;
     }

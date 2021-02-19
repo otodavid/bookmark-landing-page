@@ -1,9 +1,23 @@
 header {
     padding: 2.5rem 2rem;
-    @include flex(space-between, center);
+    @include flex();
 
-    @include laptop {
-        padding: 3rem 2rem 3rem 5.5rem;
+    @include media-sm {
+        margin: 0 auto;
+        max-width: 650px;
+    }
+
+    @include media-md {
+        padding: 3rem;
+    }
+
+    @include media-lg {
+        padding: 3rem 5.5rem;
+    }
+
+    @include media-xl {
+        padding-left: 10rem;
+        padding-right: 8rem;
     }
 }
 
@@ -18,13 +32,17 @@ nav {
     transform: translateX(100vw);
     @include transition-ease;
 
-    @include laptop {
+    @include media-md {
         position: static;
-        width: 50%;
+        width: 500px;
         transform: translateX(0);
         height: auto;
         background-color: transparent;
-        @include flex(space-between, center);
+        @include flex();
+    }
+
+    @include media-lg {
+        width: 580px;
     }
 
     &.open {
@@ -32,10 +50,10 @@ nav {
     }
 
     .mobile {
-        @include flex(space-between, center);
+        @include flex();
         padding: 10%;
 
-        @include laptop {
+        @include media-md {
             display: none;
         }
 
@@ -48,10 +66,15 @@ nav {
     .menu {
         padding: 0 10%;
 
-        @include laptop {
+        @include media-md {
             padding: 0;
-            width: 58%;
-            @include flex(space-between, center);
+            flex: 0 1 58%;
+            margin-left: 3rem;
+            @include flex();
+        }
+
+        @include media-lg {
+            margin-left: 0;
         }
 
         &-item {
@@ -59,7 +82,7 @@ nav {
             text-align: center;
             border-top: 1px solid rgba($gray, 0.25);
 
-            @include laptop {
+            @include media-md {
                 padding: 0;
                 border: 0;
             }
@@ -67,7 +90,7 @@ nav {
             &:last-child {
                 border-bottom: 1px solid rgba($gray, .25);
 
-                @include laptop {
+                @include media-md {
                     border: 0;
                 }
             }
@@ -79,7 +102,7 @@ nav {
         letter-spacing: 3px;
         font-size: 1.3rem;
 
-        @include laptop {
+        @include media-md {
             font-size: .8rem;
             color: set-text-color($light);
         }
@@ -98,13 +121,23 @@ nav {
         margin-top: 2rem;
         letter-spacing: 3px;
 
-        @include laptop {
-            width: 120px;
+        @include media-md {
+            flex: 0 1 100px;
             margin-top: 0;
             border: 0;
             color: set-text-color($red);
             font-size: .8rem;
             background-color: $red;
+        }
+
+        @include media-lg {
+            flex: 0 1 120px;
+        }
+
+        &:hover {
+            background-color: transparent;
+            border: 2px solid $red;
+            color: $red;   
         }
     }
 }
@@ -112,7 +145,7 @@ nav {
 .hamburger {
     font-size: $desktop-font;
 
-    @include laptop {
+    @include media-md {
         display: none;
     }
 }

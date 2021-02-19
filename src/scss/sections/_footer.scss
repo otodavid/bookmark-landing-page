@@ -3,14 +3,17 @@ footer {
     text-align: center;
 
     .content {
-    padding-top: 2rem;
+        padding-top: 2rem;
 
-
-        @include laptop {
-            @include flex(flex-start, center);
+        @include media-md {
+            @include flex(flex-start);
             max-width: 1280px;
-            padding: 0 5rem;
+            padding: 0 3rem;
             margin: 0 auto;
+        }
+
+        @include media-lg {
+            padding: 0 5rem;
         }
     }
 }
@@ -18,8 +21,8 @@ footer {
 .menu {
     margin: 1rem 0;
 
-    @include laptop {
-        @include flex(space-between, center);
+    @include media-md {
+        @include flex();
         margin-left: 3rem;
     }
 
@@ -33,22 +36,39 @@ footer {
         text-transform: uppercase;
         letter-spacing: 2px;
         padding: .5rem;
+
+        &:hover {
+            color: $red;
+        }
     }
 }
 
 .social-icons {
-    @include flex(space-between, center);
+    @include flex();
     width: 90px;
     margin: 2rem auto 2.5rem;
 
-    @include laptop {
+    @include media-md {
         margin-right: 0;
         margin-left: auto;
+        position: static;
     }
 
-    i {
+    &.menu-open {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        z-index: 2;
+        margin-left: -45px;
+    }
+
+    a {
         color: set-text-color($black);
         font-size: 27px;
+
+        &:hover {
+            color: $red;
+        }
     }
 }
 
@@ -58,7 +78,7 @@ footer {
     padding: .5rem 1rem;
     text-align: center;
 
-    @include laptop {
+    @include media-md {
         flex: 1 0 100%;
     }
 

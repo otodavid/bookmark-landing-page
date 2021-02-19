@@ -1,27 +1,44 @@
 .hero {
     padding: 2.5rem 0;
+
+    @include media-sm {
+        padding: 0;
+    }
+
+    @include media-md {
+        padding-left: 3rem;
+        @include flex();
+    }
     
-    @include laptop {
+    @include media-lg {
         padding-left: 5.5rem;
-        @include flex(space-between, center, row);
     }
 
     &-image {
         position: relative;
 
-        @include laptop {
+        @include media-md {
             order: 2;
             flex: 0 1 50%;
         }
 
         .blue-bg {
             position: absolute;
+
+            @include media-sm {
+                width: 60%;
+            }
         }
 
         img {
             width: 94%;
             margin: 0 auto;
             margin-right: 20rem;
+
+            @include media-sm {
+                width: 70%;
+                margin: 0 auto;
+            }
         }
     }
 
@@ -29,16 +46,30 @@
         padding: 2.5rem 2rem;
         text-align: center;
 
-        @include laptop {
-            padding: 2.5rem 5rem;
-            flex: 0 1 50%;
+        @include media-sm {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        @include media-md {
+            padding: 2.5rem 0;
+            flex: 0 1 45%;
             text-align: left;
+        }
+
+        @include media-lg {
+            flex-basis: 460px;
+        }
+
+        @include media-xl {
+            padding: 2.5rem 5rem;
+            flex-basis: 50%;
         }
 
         p {
             padding: 6% 0;
 
-            @include laptop {
+            @include media-md {
                 padding: 4% 0;
             }
         }
@@ -50,16 +81,36 @@
     
     &-btns {
         width: 100%;
-        @include flex(space-between, center);
+        @include flex();
         padding-top: 1rem;
+        max-width: 330px;
+        margin: 0 auto;
 
         .btn-primary:last-of-type {
             color: set-text-color(whitesmoke);
             background-color: whitesmoke;
+
+            &:hover {
+                border: 2px solid $black;
+                background-color: #fff;
+            }
         }
 
-        @include laptop {
-            width: 340px;
+        @include media-xs {
+            @include flex(center);
+            
+            .btn-primary:last-of-type {
+                margin-top: 1rem;
+            }
+        }
+
+        @include media-md {
+            max-width: 330px;
+            margin: 0;
+        }
+
+        @include media-lg {
+            max-width: 355px;
         }
     }
 }
@@ -73,7 +124,7 @@
     z-index: -1;
     background-color: $blue;
 
-    @include laptop {
+    @include media-lg {
         top: 9rem;
         width: 70%;
         height: 75%;

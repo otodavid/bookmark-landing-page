@@ -1,16 +1,31 @@
 .extensions {
-    @include laptop {
-        padding: 5.5rem;
+    @include media-lg {
+        padding: 4rem 2.5rem;
+    }
+
+    @include media-xl {
+        padding: 4rem;
     }
 
     .content {
         padding: 0 2rem 2.5rem;
         text-align: center;
+        max-width: 950px;
+        margin: 0 auto;
 
-        @include laptop {
-            @include flex(space-between, flex-start, row);
-            padding: 0 5rem;
+        @include media-sm {
+            @include flex();
+        }
+
+        @include media-md {
+            @include flex(center, flex-start);
+            padding: 0 2rem;
             margin-top: -2rem;
+        }
+
+        @include media-lg {
+            @include flex($align: flex-start);
+            padding: 0;
         }
     }
 }
@@ -23,8 +38,26 @@
     margin-bottom: 2rem;
     padding: 1rem 0;
 
-    @include laptop {
+    @include media-sm {
         width: auto;
+    }
+
+    @include media-md {
+        flex: 0 1 260px;
+        margin: 0;
+        margin-right: 2rem;
+
+        &:nth-of-type(2) {
+            margin-top: 2rem;
+        }
+        &:last-of-type {
+            margin-top: 4rem;
+        }
+    }
+
+    @include media-lg {
+        flex: 0 1 300px;
+        margin: 0;
 
         &:nth-of-type(2) {
             margin-top: 2.5rem;
@@ -52,7 +85,7 @@
         color: $gray;
         display: block;
 
-        @include laptop {
+        @include media-lg {
             font-size: $mobile-font;
         }
     }
