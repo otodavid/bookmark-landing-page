@@ -1514,6 +1514,10 @@ footer .content {
   text-align: center;
 }
 
+.attribution p {
+  color: #252b46;
+}
+
 @media screen and (min-width: 768px) {
   .attribution {
     -webkit-box-flex: 1;
@@ -1524,4 +1528,10 @@ footer .content {
 
 .attribution a {
   font-size: inherit;
+  color: #5368df;
+  font-weight: 500;
+}
+
+.attribution a:hover {
+  color: #fa5757;
 }

@@ -78,11 +78,21 @@ footer {
     padding: .5rem 1rem;
     text-align: center;
 
+    p {
+        color: set-text-color($light);
+    }
+
     @include media-md {
         flex: 1 0 100%;
     }
 
     a {
         font-size: inherit;
+        color: $blue;
+        font-weight: 500;
+
+        &:hover {
+            color: $red;
+        }
     }
 }
