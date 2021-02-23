@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -7,7 +8,7 @@
 }
 
 body {
-  font-family: 'Rubik', Roboto, Arial, sans-serif;
+  font-family: "Rubik", Roboto, Arial, sans-serif;
   font-size: 0.94rem;
   line-height: 1.6;
 }
@@ -54,6 +55,11 @@ h3 {
   h3 {
     font-size: 2rem;
   }
+}
+
+p {
+  color: #9194a1;
+  padding: 1.1rem 0;
 }
 
 ul {
@@ -133,17 +139,6 @@ button {
 .btn-secondary:hover {
   border: 2px solid #fa5757;
   color: #fa5757;
-}
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  overflow: auto;
-}
-
-p {
-  color: #9194a1;
-  padding: 1.1rem 0;
 }
 
 header {

@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400&display=swap');
+// import config files
+@import 'abstracts/colors';
+@import 'abstracts/fonts';
+@import 'abstracts/mixins';
 
-@import 'config', 'resets', 'buttons';
+// import base styles
+@import 'base/base';
 
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow: auto;
-}
+// import components
+@import 'components/buttons.scss';
 
-p {
-    color: $gray;
-    padding: 1.1rem 0;
-}
-
-// import sections
-@import 'sections/header', 'sections/hero', 'sections/features', 'sections/extensions', 'sections/faq', 'sections/newsletter', 'sections/footer';
+// import layout
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/features';
+@import 'layout/extensions';
+@import 'layout/faq';
+@import 'layout/newsletter';
+@import 'layout/footer';
