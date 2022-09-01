@@ -86,6 +86,11 @@ button {
   cursor: pointer;
 }
 
+.container {
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
 .btn-primary, .btn-secondary, nav .nav-btn {
   display: block;
   font-weight: 500;
